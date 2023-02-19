@@ -131,7 +131,7 @@
         switch(this.alerta.tipo) {
             case 'erro': return 'fa-solid fa-triangle-exclamation'
             case 'sucesso': return 'fa-solid fa-square-check'
-            default: return ''
+            default: return 'fa-solid fa-square-check'
         }
       }
     }
