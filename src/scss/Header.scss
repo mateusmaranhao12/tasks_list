@@ -1,0 +1,18 @@
+@import 'variaveis';
+
+nav {
+    border-bottom: $px1 $solid $cinza;
+    margin-bottom: $px10;
+}
+
+ul {
+    border: $px1 $solid $cinza;
+    border-radius: $px20;
+    padding: $px20;
+    margin: $px5;
+
+    li {
+        padding: $px10;
+        border-radius: $px20;
+    }
+}

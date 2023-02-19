@@ -1,0 +1,22 @@
+@import 'variaveis';
+
+input {
+    margin-top: $px10;
+}
+
+button {
+    margin-top: $px10;
+}
+
+.input-group {
+    border: $px1 $solid $cinza;
+    padding: 30px;
+    border-radius: $px20;
+    margin-top: 50px;
+
+    h1 {
+        font-weight: $bold;
+        text-transform: $uppercase;
+        color: $preto;
+    }
+}

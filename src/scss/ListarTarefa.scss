@@ -1,0 +1,25 @@
+@import 'variaveis';
+
+.listar-tarefa {
+
+    border: $px1 $solid $cinza;
+    margin-top: $px20;
+    margin-bottom: $px20;
+    border-radius: $px20;
+
+    label {
+        color: $preto;
+    }
+
+    h1 {
+        margin-top: $rem2;
+        font-weight: $bold;
+        text-transform: $uppercase;
+        text-align: $center;
+        color: $preto;
+    }
+
+    button {
+        margin-bottom: $px20;
+    }
+}

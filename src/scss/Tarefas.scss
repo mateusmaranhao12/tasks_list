@@ -1,0 +1,9 @@
+@import 'variaveis';
+
+h1 {
+    margin-top: $rem2;
+    font-weight: $bold;
+    text-transform: $uppercase;
+    text-align: $center;
+    color: $preto;
+}

@@ -1,0 +1,52 @@
+<template>
+        <div class="card container py-2 px-10 mx-0 min-w-full flex flex-col items-center">
+            <div class="px-2 py-2">
+                <div class="font-bold text-xl mb-2">Rebocar o muro</div>
+            </div>
+            <div class="px-2 pt-2 pb-1">
+                <button class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+                <button class="bg-transparent hover:bg-cyan-500 text-cyan-700 font-semibold hover:text-white py-2 px-4 border border-cyan-500 hover:border-transparent rounded">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card container py-2 px-10 mx-0 min-w-full flex flex-col items-center">
+            <div class="px-2 py-2">
+                <div class="font-bold text-xl mb-2">Encher as garrafas</div>
+            </div>
+            <div class="px-2 pt-2 pb-1">
+                <button class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+                <button class="bg-transparent hover:bg-cyan-500 text-cyan-700 font-semibold hover:text-white py-2 px-4 border border-cyan-500 hover:border-transparent rounded">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card container py-2 px-10 mx-0 min-w-full flex flex-col items-center">
+            <div class="px-2 py-2">
+                <div class="font-bold text-xl mb-2">Lavar o carro do vizinho</div>
+            </div>
+            <div class="px-2 pt-2 pb-1">
+                <button class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+                <button class="bg-transparent hover:bg-cyan-500 text-cyan-700 font-semibold hover:text-white py-2 px-4 border border-cyan-500 hover:border-transparent rounded">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+            </div>
+        </div>
+
+</template>
+
+<script>
+    export default {
+
+    }
+</script>
+
+<style lang="scss" scoped>
+    @import '@/scss/Tarefa';
+</style>

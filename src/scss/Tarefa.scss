@@ -1,0 +1,12 @@
+@import 'variaveis';
+
+button {
+    margin: $px5;
+}
+
+.card {
+    border: $px1 $solid $cinza;
+    margin-top: $px20;
+    margin-bottom: $px20;
+    border-radius: $px20;
+}
