@@ -7,6 +7,14 @@
     {
       "tarefa": "Lavar o carro do vizinho",
       "id": 4
+    },
+    {
+      "tarefa": "Rebocar o muro",
+      "id": 5
+    },
+    {
+      "tarefa": "Descobrir a cura da AIDS",
+      "id": 6
     }
   ]
 }
