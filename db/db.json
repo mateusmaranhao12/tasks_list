@@ -1,28 +1,20 @@
 {
   "tarefas": [
     {
-      "id": 1,
-      "tarefa": "Rebocar o muro"
-    },
-    {
       "tarefa": "Tirar o lixo",
-      "id": 2
-    },
-    {
-      "tarefa": "Lavar louça",
-      "id": 3
+      "id": 1
     },
     {
       "tarefa": "Comprar ração do gato",
-      "id": 4
-    },
-    {
-      "tarefa": "Dar banho nos peixes",
-      "id": 5
+      "id": 2
     },
     {
       "tarefa": "Descobrir a cura da AIDS",
-      "id": 6
+      "id": 3
+    },
+    {
+      "tarefa": "Dar banho nos peixes",
+      "id": 4
     }
   ]
 }

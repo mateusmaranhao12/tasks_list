@@ -1,4 +1,10 @@
 <template>
+    <Alerta v-if="exibirAlerta" :tipo="alerta.tipo">
+      <template v-slot:titulo>
+        <h5 class="font-bold"> <i :class="iconeAlerta"></i> {{ alerta.titulo }}</h5>
+      </template>
+        <p class="block sm:inline">{{ alerta.descricao }}</p>
+    </Alerta>
     <div class="listar-tarefa container py-3 px-6 mx-0 min-w-full flex flex-col items-center">
       <h1 class="text-4xl mb-8">Listar Tarefa</h1>
       <form method="POST" class="max-w-lg" @submit="adicionarTarefa">
@@ -34,20 +40,52 @@
 </template>
 
 <script>
-    export default {
+  import Alerta from '@/components/Alerta.vue'
 
-      name: 'ListarTarefa',
+  export default {
 
-      data: () => ({
+    name: 'ListarTarefa',
 
-        tarefa: ''
+    components: {
+      Alerta
+    },
 
-      }),
+    data: () => ({
 
-      methods: {
+      tarefa: '',
+      exibirAlerta: false,
+      alerta: { titulo: '', descricao: '', tipo: '', icone: ''}
 
-        async adicionarTarefa(e) {
+    }),
 
+    
+    mounted() {
+      this.emitter.on('alerta', (a) => {
+
+        this.alerta = a
+        this.exibirAlerta = true
+        setTimeout(() => this.exibirAlerta = false, 4000)
+      })
+    },
+
+    methods: {
+
+
+      limparFormulario() { //resetar formulario
+        this.tarefa = ''
+      },
+
+      validarFormulario() { //verificar se todos os campos foram preenchidos
+        let valido = true
+
+        if(this.tarefa === '') valido = false
+
+        return valido
+      },
+
+      async adicionarTarefa(e) { //adicionar tarefa
+
+        if (this.validarFormulario()) { //feed de sucesso
           e.preventDefault()
 
           const data = {
@@ -64,17 +102,41 @@
           
           await req.json()
 
+          this.emitter.emit('alerta', {
+            tipo: 'sucesso',
+            titulo: 'Sucesso!',
+            descricao: 'Sua tarefa foi listada com sucesso e agora pode ser consultada na página principal!'
+          })
+
           this.limparFormulario()
 
-        },
+        } else { //feed de erro
 
-        limparFormulario() {
-          this.tarefa = ''
+          e.preventDefault()
+
+          this.emitter.emit('alerta', {
+            tipo: 'erro',
+            titulo: 'Erro!',
+            descricao: 'Informe a tarefa que deseja listar!'
+          })
+
         }
 
       }
 
+    },
+
+    computed: {
+      iconeAlerta() { //icone de alerta de sucesso e de erro
+        switch(this.alerta.tipo) {
+            case 'erro': return 'fa-solid fa-triangle-exclamation'
+            case 'sucesso': return 'fa-solid fa-square-check'
+            default: return ''
+        }
+      }
     }
+
+  }
 </script>
 
 <style lang="scss" scoped>
