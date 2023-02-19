@@ -64,6 +64,12 @@
           
           await req.json()
 
+          this.limparFormulario()
+
+        },
+
+        limparFormulario() {
+          this.tarefa = ''
         }
 
       }
