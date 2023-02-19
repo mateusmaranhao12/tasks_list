@@ -1,13 +1,14 @@
 <template>
     <div class="listar-tarefa container py-3 px-6 mx-0 min-w-full flex flex-col items-center">
       <h1 class="text-4xl mb-8">Listar Tarefa</h1>
-      <form class="max-w-lg">
+      <form method="POST" class="max-w-lg" @submit="adicionarTarefa">
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="tarefa">
               Tarefa
             </label>
             <input 
+              v-model="tarefa"
               class="
                 appearance-none 
                 block w-full 
@@ -34,6 +35,38 @@
 
 <script>
     export default {
+
+      name: 'ListarTarefa',
+
+      data: () => ({
+
+        tarefa: ''
+
+      }),
+
+      methods: {
+
+        async adicionarTarefa(e) {
+
+          e.preventDefault()
+
+          const data = {
+            tarefa: this.tarefa
+          }
+
+          const dataJson = JSON.stringify(data)
+
+          const req = await fetch ('http://localhost:3000/tarefas', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: dataJson
+          })
+          
+          await req.json()
+
+        }
+
+      }
 
     }
 </script>

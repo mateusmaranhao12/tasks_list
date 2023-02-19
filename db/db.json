@@ -1,0 +1,20 @@
+{
+  "tarefas": [
+    {
+      "id": 1,
+      "tarefa": "Rebocar o muro"
+    },
+    {
+      "tarefa": "Tirar o lixo",
+      "id": 2
+    },
+    {
+      "tarefa": "Lavar louça",
+      "id": 3
+    },
+    {
+      "tarefa": "Comprar ração do gato",
+      "id": 4
+    }
+  ]
+}
